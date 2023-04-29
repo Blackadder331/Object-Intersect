@@ -1,0 +1,278 @@
+/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Supply", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: white;
+  background-color: black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12vw;
+}
+
+.hero-headline {
+  font-size: 9rem;
+  color: #fff;
+  font-weight: 200;
+  max-width: 13ch;
+  letter-spacing: -3px;
+  line-height: 0.9;
+}
+
+.hero-headline span {
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 6.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.hero-sub {
+  color: #fff;
+  font-size: 2rem;
+  margin-top: 3rem;
+  max-width: 45ch;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+#hero-button {
+  margin-top: 4rem;
+}
+.hero-image {
+  height: 100vh;
+  background-color: black;
+  /* background-image: url(./Images/bg.png); */
+  background-position: center;
+  background-size: cover;
+}
+
+.circle-images {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 12.5rem;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.content-section * {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.content-section *.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gold-arrow {
+  align-self: flex-end;
+  position: absolute;
+  bottom: 10vh;
+  cursor: pointer;
+  z-index: 2;
+  height: 5rem;
+  width: 3.5rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 400ms ease-in-out;
+}
+
+.gold-arrow:hover img {
+  opacity: 0.4;
+  transform: translateY(1rem);
+  transition: 200ms cubic-bezier(0.175, 0.885, 0.32, 1.05);
+}
+
+#header-1 {
+  scale: 0.75;
+  position: relative;
+  right: 3vw;
+  top: 46vh;
+  margin: 0.25rem;
+}
+
+#header-2 {
+  scale: 2;
+  position: relative;
+  right: 17.5vw;
+  top: 16vh;
+}
+
+#header-3 {
+  scale: 1;
+  position: relative;
+  right: 4.5vw;
+  bottom: 32vh;
+}
+
+#header-4 {
+  scale: 1.5;
+  position: relative;
+  right: 0vw;
+  bottom: 35vh;
+}
+
+main {
+  padding: 7rem 12vw;
+  min-height: 100vh;
+}
+
+.feature-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rem;
+}
+
+.feature-section p {
+  font-size: 3.5rem;
+  max-width: 25ch;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.feature-section h2 {
+  font-weight: 200;
+  font-size: 5.5rem;
+  color: #ffed92;
+  margin: 0;
+  padding: 0;
+
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.feature-section:nth-child(2) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 12rem;
+}
+
+.feature-img {
+  max-height: 33vw;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+button {
+  color: #ffffff;
+  background-color: transparent;
+  outline: 1px solid white;
+  border-radius: 20rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  font-family: "Supply";
+  transition: opacity 600ms, transform 400ms;
+}
+
+button:hover {
+  background-color: #ffed92;
+  color: black;
+  border: 2px solid #ffed92;
+  transition: 600ms ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .hero-headline {
+    font-size: 3.25rem;
+    max-width: 100%;
+    margin-top: -31rem;
+    margin-bottom: 6vh;
+  }
+  .hero-headline span {
+    font-size: 2.2rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    margin-top: -3rem;
+  }
+
+  #header-1,
+  #header-3,
+  #header-4 {
+    display: none;
+  }
+
+  #header-2 {
+    scale: 2;
+    position: unset;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    height: 40vh !important;
+    width: 10vh !important;
+    margin-top: 16vh;
+  }
+  .gold-arrow {
+    right: 15vw;
+    bottom: 10vh;
+  }
+  #container {
+    flex-direction: column;
+  }
+  .feature-text {
+    margin-top: 5rem;
+  }
+  .feature-text h2 {
+    font-size: 3rem;
+  }
+  .feature-text p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    max-width: 45ch;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+  }
+
+  .feature-section {
+    align-items: flex-start;
+  }
+}
